@@ -1,0 +1,156 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+:root {
+    --screenwidth: 100vw;
+    --screenheight: 100vh;
+}
+
+
+@plugin "daisyui/theme" {
+    name: "bookery";
+    default: true;
+    prefersdark: true;
+    color-scheme: "bookery";
+    --color-base-100: #00090D;
+    --color-base-200: #001219;
+    --color-base-300: #0E191E;
+    --color-base-content: oklch(97.807% 0.029 256.847);
+    --color-primary: oklch(0.6024 0.101 197.4);
+    --color-primary-content: oklch(96% 0.018 272.314);
+    --color-secondary: #ae2012;
+    --color-secondary-content: oklch(94% 0.028 342.258);
+    --color-accent: #ca6702;
+    --color-accent-content: oklch(100% 0 0);
+    --color-neutral: #FFF1C0;
+    --color-neutral-content: oklch(0% 0 0);
+    --color-info: oklch(74% 0.16 232.661);
+    --color-info-content: oklch(29% 0.066 243.157);
+    --color-success: oklch(76% 0.177 163.223);
+    --color-success-content: oklch(37% 0.077 168.94);
+    --color-warning: oklch(82% 0.189 84.429);
+    --color-warning-content: oklch(41% 0.112 45.904);
+    --color-error: oklch(63% 0.237 25.331);
+    --color-error-content: oklch(27% 0.105 12.094);
+    --radius-selector: 0.5rem;
+    --radius-field: 0.25rem;
+    --radius-box: 0.25rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 1;
+    --noise: 0;
+    --font-bookery: "PW Serif Scratch", serif;
+}
+
+@font-face {
+    font-family: "PW Serif Scratch";
+    src: url("/fonts/PWSerifScratch.ttf") format("ttf");
+    font-weight: 400;
+    font-style: normal;
+}
+
+.bookery {
+    font-family: "Bookery", serif;
+    font-size: 40px;
+    color: var(--color-primary);
+}
+
+.bookery span:nth-child(1) {
+    color: #005f73;
+}
+.bookery span:nth-child(2) {
+    color: #0a9396;
+}
+.bookery span:nth-child(3) {
+    color: #94d2bd;
+}
+.bookery span:nth-child(4) {
+    color: #ee9b00;
+}
+.bookery span:nth-child(5) {
+    color: #ca6702;
+}
+.bookery span:nth-child(6) {
+    color: #9b2226;
+}
+.bookery span:nth-child(7) {
+    color: #540b0e;
+}
+
+.char {
+    opacity: 0;
+    animation: type-in 0.1s steps(7, end) forwards;
+}
+
+
+.char:nth-child(1) { animation-delay: 0.1s; }
+.char:nth-child(2) { animation-delay: 0.3s; }
+.char:nth-child(3) { animation-delay: 0.5s; }
+.char:nth-child(4) { animation-delay: 0.7s; }
+.char:nth-child(5) { animation-delay: 0.9s; }
+.char:nth-child(6) { animation-delay: 1.1s; }
+.char:nth-child(7) { animation-delay: 1.3s; }
+
+@keyframes type-in {
+    to {
+        opacity: 1;
+    }
+}
+
+.navbar {
+    padding-inline:20px;
+}
+
+.sidebar-h1 {
+    font-family: 'Noto Sans', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    opacity: 0.7;
+    font-size: 1rem;
+}
+
+.content-max-dimensions {
+    max-width: calc(var(--screenwidth) - 260px);
+    max-height: calc(var(--screenheight) - 65px);
+}
+
+ul {
+    columns: 2;
+    -webkit-columns: 2;
+    -moz-columns: 2;
+}
+
+li {
+    font-family: "Noto Sans", sans-serif;
+    font-size: small;
+}
+
+.navbar-link {
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding-top: 15px;
+    height: 60px;
+}
+
+.navbar-link:hover {
+    border-bottom: 4px solid #0a9396;
+}
+
+.navbar-link:active {
+    border-bottom: 4px solid #0a9396;
+}
+
+.index-shelf-button {
+    display: none;
+    border-radius: 5px;
+    background-color: #0a9396;
+    padding: 3px;
+    z-index: 10;
+    position: fixed;
+}
+.book-listing-cover:hover .index-shelf-button {
+    display: inline;
+}
