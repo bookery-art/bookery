@@ -11,13 +11,26 @@
   },
   "dependencies": {
     "@nuxt/fonts": "^0.11.4",
+    "@nuxt/icon": "^1.15.0",
     "@nuxt/image": "^1.10.0",
     "@tailwindcss/vite": "^4.1.11",
+    "@vueuse/core": "^13.6.0",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "daisyui": "^5.0.48",
+    "lucide-vue-next": "^0.532.0",
     "nuxt": "^4.0.1",
+    "reka-ui": "^2.4.0",
+    "shadcn-nuxt": "^2.2.0",
+    "tailwind-merge": "^3.3.1",
     "tailwindcss": "^4.1.11",
+    "tw-animate-css": "^1.3.6",
+    "vite-tsconfig-paths": "^5.1.4",
     "vue": "^3.5.17",
     "vue-router": "^4.5.1",
     "vuetify-nuxt-module": "^0.18.7"
+  },
+  "devDependencies": {
+    "typescript": "^5.8.3"
   }
 }

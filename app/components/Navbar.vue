@@ -17,9 +17,10 @@
                 <a href="/" class="navbar-link self-center">Books</a>
                 <a href="" class="navbar-link self-center">Bundles</a>
                 <a href="" class="navbar-link self-center">Authors</a>
+                <a href="" class="navbar-link self-center">Shelves</a>
             </div>  
             <div class="flex gap-4">
-                <label class="input lg:min-w-96 mx-[10px] px-2">
+                <label class="input  input-primary lg:min-w-96 mx-[10px] px-2">
                 <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
                     <g
                     stroke-linejoin="round"
@@ -32,7 +33,7 @@
                     <path d="m21 21-4.3-4.3"></path>
                     </g>
                 </svg>
-                <input type="search" class="grow input-secondary" placeholder="Search for books, authors or genres" />
+                <input type="search" class="grow" placeholder="Search for books, authors or genres" />
                 </label>
                 <div class="indicator">
                 <button class="btn btn-ghost btn-circle">

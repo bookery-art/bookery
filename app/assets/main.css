@@ -1,4 +1,8 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
 @plugin "daisyui";
 
 :root {
@@ -6,23 +10,22 @@
     --screenheight: 100vh;
 }
 
-
 @plugin "daisyui/theme" {
     name: "bookery";
     default: true;
     prefersdark: true;
     color-scheme: "bookery";
-    --color-base-100: #00090D;
-    --color-base-200: #001219;
-    --color-base-300: #0E191E;
+    --color-base-100: oklch(0.129 0.0231 217.78);
+    --color-base-200: oklch(0.169 0.0314 222.65);
+    --color-base-300: oklch(0.2054 0.0187 228.07);
     --color-base-content: oklch(97.807% 0.029 256.847);
     --color-primary: oklch(0.6024 0.101 197.4);
     --color-primary-content: oklch(96% 0.018 272.314);
-    --color-secondary: #ae2012;
+    --color-secondary: oklch(0.4865 0.179 30.2);
     --color-secondary-content: oklch(94% 0.028 342.258);
-    --color-accent: #ca6702;
+    --color-accent: oklch(0.6189 0.1537 54.41);
     --color-accent-content: oklch(100% 0 0);
-    --color-neutral: #FFF1C0;
+    --color-neutral: oklch(0.9573 0.0648 94);
     --color-neutral-content: oklch(0% 0 0);
     --color-info: oklch(74% 0.16 232.661);
     --color-info-content: oklch(29% 0.066 243.157);
@@ -83,7 +86,6 @@
     animation: type-in 0.1s steps(7, end) forwards;
 }
 
-
 .char:nth-child(1) { animation-delay: 0.1s; }
 .char:nth-child(2) { animation-delay: 0.3s; }
 .char:nth-child(3) { animation-delay: 0.5s; }
@@ -136,21 +138,42 @@ li {
 }
 
 .navbar-link:hover {
-    border-bottom: 4px solid #0a9396;
+    border-bottom: 4px solid var(--color-primary);
 }
 
 .navbar-link:active {
-    border-bottom: 4px solid #0a9396;
+    border-bottom: 4px solid var(--color-primary);
 }
 
 .index-shelf-button {
     display: none;
     border-radius: 5px;
-    background-color: #0a9396;
+    background-color: var(--color-primary);
     padding: 3px;
     z-index: 10;
-    position: fixed;
+    font-size: small;
 }
 .book-listing-cover:hover .index-shelf-button {
     display: inline;
+}
+
+.book-listing-title {
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+}
+
+.book-listing-author {
+    font-family: "Noto Sans", sans-serif;
+    font-weight: 400;
+    font-size: 0.65rem;
+}
+
+
+
+.dashboard-content {
+    max-width: calc(var(--screenwidth) - 260px);
+    left: 260px;
+    position: fixed;
 }

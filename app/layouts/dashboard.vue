@@ -1,8 +1,7 @@
 <template lang="">
     <div>
-        <Navbar />
-        <IndexSidebar />
-        <div class="top-[65px] left-[260px] fixed w-full h-full overflow-y-auto content-max-dimensions">
+        <SidebarsDashboardSidebar />
+        <div class="dashboard-content top-0 left-[260px] w-full h-full overflow-y-auto">
             <slot />
         </div>
     </div>

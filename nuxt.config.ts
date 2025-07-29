@@ -8,7 +8,12 @@ export default defineNuxtConfig({
     plugins: [tailwindcss()],
   },
   css: ["~/assets/main.css"],
-  modules: ['vuetify-nuxt-module', "@nuxt/fonts", '@nuxt/image'],
+  modules: [
+    'vuetify-nuxt-module',
+    "@nuxt/fonts",
+    '@nuxt/image',
+    '@nuxt/icon',
+  ],
   fonts: {
     families: [
       { name : 'Bookery', src: '/PWSerifScratch.ttf' },
@@ -22,5 +27,5 @@ export default defineNuxtConfig({
     vuetifyOptions: {
       /* vuetify options */
     }
-  },
+  }
 })
