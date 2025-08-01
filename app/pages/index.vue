@@ -1,7 +1,7 @@
 <template lang="">
     <div>
-        <HomeCategoryDisplay />
-        <HomeCategoryDisplay />
+        <IndexCategoryDisplay />
+        <IndexCategoryDisplay />
     </div>
 </template>
 <script>

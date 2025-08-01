@@ -1,13 +1,61 @@
 @import "tailwindcss";
-@import "tw-animate-css";
-
-@custom-variant dark (&:is(.dark *));
-
 @plugin "daisyui";
+
+@import "tw-animate-css";
+@import "@nuxt/ui";
+
+@source "../../components/**/*";
+@source "../../pages/**/*";
 
 :root {
     --screenwidth: 100vw;
     --screenheight: 100vh;
+    --ui-primary: oklch(0.6024 0.101 197.4);
+    --ui-secondary: oklch(0.4865 0.179 30.2);
+    --ui-success: var(--ui-color-success-500);
+    --ui-info: var(--ui-color-info-500);
+    --ui-warning: var(--ui-color-warning-500);
+    --ui-error: var(--ui-color-error-500);
+    --ui-bg: oklch(0.129 0.0231 217.78);
+    --color-primary: oklch(0.6024 0.101 197.4);
+    --color-base-100: oklch(0.129 0.0231 217.78);
+    --color-base-200: oklch(0.169 0.0314 222.65);
+    --color-base-300: oklch(0.2054 0.0187 228.07);
+    --default-font-family: "Noto Sans", sans-serif;
+    --color-base-100: oklch(0.129 0.0231 217.78);
+    --color-base-200: oklch(0.169 0.0314 222.65);
+    --color-base-300: oklch(0.2054 0.0187 228.07);
+    --color-base-content: oklch(97.807% 0.029 256.847);
+    --color-primary: oklch(0.6024 0.101 197.4);
+    --color-primary-content: oklch(96% 0.018 272.314);
+    --color-secondary: oklch(0.4865 0.179 30.2);
+    --color-secondary-content: oklch(94% 0.028 342.258);
+    --color-accent: oklch(0.6189 0.1537 54.41);
+    --color-accent-content: oklch(100% 0 0);
+    --color-neutral: oklch(0.9573 0.0648 94);
+    --color-neutral-content: oklch(0% 0 0);
+    --color-info: oklch(74% 0.16 232.661);
+    --color-info-content: oklch(29% 0.066 243.157);
+    --color-success: oklch(76% 0.177 163.223);
+    --color-success-content: oklch(37% 0.077 168.94);
+    --color-warning: oklch(82% 0.189 84.429);
+    --color-warning-content: oklch(41% 0.112 45.904);
+    --color-error: oklch(63% 0.237 25.331);
+    --color-error-content: oklch(27% 0.105 12.094);
+    --radius-selector: 0.5rem;
+    --radius-field: 0.25rem;
+    --radius-box: 0.25rem;
+    --size-selector: 0.25rem;
+    --size-field: 0.25rem;
+    --border: 1px;
+    --depth: 1;
+    --noise: 0;
+    --font-bookery: "PW Serif Scratch", serif;
+    --font-noto: "Noto Sans", sans-serif;
+}
+
+html {
+    font-family: var(--default-font-family);
 }
 
 @plugin "daisyui/theme" {
@@ -52,6 +100,7 @@
     font-weight: 400;
     font-style: normal;
 }
+
 
 .bookery {
     font-family: "Bookery", serif;
@@ -117,32 +166,44 @@
     max-height: calc(var(--screenheight) - 65px);
 }
 
-ul {
-    columns: 2;
-    -webkit-columns: 2;
-    -moz-columns: 2;
+.sidebar-list ul {
+    display: grid;
+    grid-template-rows: repeat(4, min-content);
+    grid-auto-flow: column;
 }
 
-li {
+.sidebar-list li {
     font-family: "Noto Sans", sans-serif;
-    font-size: small;
+    font-size: 0.875rem;
+}
+
+.sidebar-link:focus {
+    color: #005f73;
 }
 
 .navbar-link {
     font-family: "Noto Sans", sans-serif;
-    font-weight: 700;
+    font-weight: 900;
     text-transform: uppercase;
     font-size: 1rem;
-    padding-top: 15px;
+    padding-top: 20px;
     height: 60px;
+    border-bottom: 4px solid transparent;
+}
+
+.navbar-link-item {
+    color: var(--color-primary);
+    border-bottom: 4px solid var(--color-primary);
 }
 
 .navbar-link:hover {
     border-bottom: 4px solid var(--color-primary);
+    color: var(--color-primary);
 }
 
 .navbar-link:active {
     border-bottom: 4px solid var(--color-primary);
+    color: var(--color-primary);
 }
 
 .index-shelf-button {
@@ -170,10 +231,79 @@ li {
     font-size: 0.65rem;
 }
 
-
-
 .dashboard-content {
     max-width: calc(var(--screenwidth) - 260px);
     left: 260px;
     position: fixed;
+}
+
+.dashboard-user-button p {
+    font-size: 12px;
+}
+
+.dashboard-user-button {
+    width: full;
+    border-color: var(--color-primary);
+    border-radius: 5px;
+    text-align: left;
+}
+
+.dashboard-sidebar-menu {
+    padding-inline: 10px;
+    margin-top: 10px;
+}
+
+.dashboard-sidebar-menu li {
+    font-size: 1rem;
+}
+
+.navbar-login {
+    border-color: var(--color-primary);
+    padding: 5px;
+    width: 70px;
+    color: var(--color-primary);
+    font-size: 15px;
+    text-align: center;
+}
+
+.navbar-signup {
+    background-color: #005f73;
+    color: white;
+    padding: 5px;
+    width: 70px;
+    font-size: 15px;
+}
+
+.dashboard-menu-item {
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-inline: 5px;
+    font-size: 1rem;
+}
+
+.advanced-search {
+    background-color: #00607340;
+}
+
+.book-body {
+    margin-left: 5vw;
+    margin-right: 5vw;
+    text-align: center;
+    margin-top: 5vh;
+    height:100%;
+    background-color: var(--color-base-100);
+}
+
+.book-body h1 {
+    font-size: large;
+    font-weight: 700;
+    font-family: 'Noto Sans', sans-serif;
+}
+
+.book-body h2 {
+    font-family: var(--font-noto);
+}
+
+.book-body p {
+    line-height: 1.5;
 }

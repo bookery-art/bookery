@@ -3,12 +3,12 @@
         <div class="flex flex-col px-5 py-3">
             <h1 class="sidebar-h1">Book Category</h1>
             <div class="flex flex-row gap-4 overflow-x-scroll">
-                <BookListingIndex />
-                <BookListingIndex />
-                <BookListingIndex />
-                <BookListingIndex />
-                <BookListingIndex />
-                <BookListingIndex />
+                <IndexBookListing />
+                <IndexBookListing />
+                <IndexBookListing />
+                <IndexBookListing />
+                <IndexBookListing />
+                <IndexBookListing />
             </div>
         </div>
     </div>

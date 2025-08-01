@@ -1,11 +1,11 @@
 <template lang="">
     <div>
-        Teste
+        Test
     </div>
 </template>
 <script>
 definePageMeta({
-    layout: 'dashboard'
+    layout: 'book'
 })
 </script>
 <style lang="">

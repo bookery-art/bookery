@@ -1,12 +1,14 @@
 <template lang="">
     <div>
-        Teste
+        <Navbar />
+        Error
     </div>
 </template>
+
 <script>
-definePageMeta({
-    layout: 'dashboard'
-})
+export default {
+    
+}
 </script>
 <style lang="">
     
