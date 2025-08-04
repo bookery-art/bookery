@@ -6,7 +6,7 @@
 </template>
 <script>
 definePageMeta({
-    layout: 'default'
+    layout: 'home'
 })
 </script>
 <style lang="">

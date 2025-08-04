@@ -47,7 +47,7 @@
                 </ul>
             </div>
         </div>
-            <UButton trailing-icon="i-lucide-arrow-right" size="md" class="advanced-search w-full py-2 px-2 text-primary/99" variant="soft">Advanced Search</UButton>
+            <UButton trailing-icon="i-lucide-arrow-right" size="md" class="advanced-search w-full py-2 px-2 text-primary/99" variant="soft" to="/search">Advanced Search</UButton>
             <div class="bottom-0 fixed text-center mb-5">
                 2025 &#169; Bookery
             </div>

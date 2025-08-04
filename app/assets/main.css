@@ -108,6 +108,12 @@ html {
     color: var(--color-primary);
 }
 
+.bookery-preview {
+    font-family: "Bookery", serif;
+    color: var(--color-primary);
+    font-size: 5rem;
+}
+
 .bookery span:nth-child(1) {
     color: #005f73;
 }
@@ -259,6 +265,7 @@ html {
 
 .navbar-login {
     border-color: var(--color-primary);
+    border-width: 3px;
     padding: 5px;
     width: 70px;
     color: var(--color-primary);
@@ -306,4 +313,21 @@ html {
 
 .book-body p {
     line-height: 1.5;
+}
+
+.feature-item {
+    border-radius: 0.25rem;
+    border-color: #00607340;
+    border-width: 2px;
+    display: flex;
+    flex-direction: row;
+}
+
+.feature-item:hover {
+    border-radius: 0.25rem;
+    border-color: #00607340;
+    border-width: 2px;
+    display: flex;
+    flex-direction: row;
+    background-color: #00607315;
 }

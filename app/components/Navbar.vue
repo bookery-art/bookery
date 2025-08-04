@@ -24,7 +24,8 @@
                 >
                     <a href="" class="navbar-link self-center">Resources</a>
                 </UDropdownMenu> -->
-                <UNavigationMenu :items="nav_items" class="w-full justify-center gap-2" variant="link"  />
+                <UNavigationMenu trailing-icon="" :items="nav_items" class="w-full justify-center gap-2" variant="link">>
+                </UNavigationMenu>    
             </div>  
             <div class="flex gap-4">
                 <label class="input  input-primary hidden lg:flex lg:min-w-96 mx-[10px] px-2">
@@ -39,7 +40,7 @@
                 </div>
                 </button>
                 </div>
-                    <UButton class="navbar-login text-primary/99 justify-center" variant="outline">Log In</UButton>
+                    <UButton class="navbar-login text-primary justify-center" variant="outline">Log In</UButton>
                     <UButton class="navbar-signup text-white justify-center" variant="soft">Sign Up</UButton>
                 <!-- <div class="dropdown dropdown-end">
                 <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
@@ -97,7 +98,25 @@ const nav_items = ref<NavigationMenuItem[]>([
   },
   {
     label: 'Bundles',
-    to: '/composables',
+    to: '/',
+    slot: 'bundles' as const,
+    children: [
+        {
+        label: 'Latest Bundles',
+        description: 'Use NuxtLink with superpowers.',
+        to: '/components/link'
+      },
+      {
+        label: 'Trending Bundles',
+        description: 'Display a modal within your application.',
+        to: '/components/modal'
+      },
+      {
+        label: 'Best Deal Bundles',
+        description: 'Display a list of links.',
+        to: '/components/navigation-menu'
+      },
+    ]
   },
   {
     label: 'Resources',

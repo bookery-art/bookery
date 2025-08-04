@@ -1,6 +1,9 @@
 export default defineAppConfig({
     title: 'Bookery',
     ui: {
+        icons: {
+            chevronDown: '',
+        },
         navigationMenu: {
             slots: {
                 root: 'relative flex gap-1.5 [&>div]:min-w-0',
