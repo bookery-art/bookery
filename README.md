@@ -1,6 +1,21 @@
-# Nuxt Minimal Starter
+<p align="center">
+  <a href="https://bookery.art">
+  <picture>
+    <img alt="Bookery logo" src="https://media.beehiiv.com/cdn-cgi/image/format=auto,fit=scale-down,onerror=redirect/uploads/asset/file/5e4e7280-a649-4c83-a97a-11387d9f397f/bookery_long.png">
+    </picture>
+  </a>
+</p>
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+
+<p align="center">
+Frontend of Bookery, an indie book marketplace.
+</p>
+
+
+## Tech Stack
+
+Bookery is build using Nuxt.js v4, a Vue framework.
+
 
 ## Setup
 
@@ -73,3 +88,9 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## Other channels
+
+- [Discord Server](https://github.com/medusajs/medusa/issues)
+- [BlueSky](https://twitter.com/medusajs)
+- [Instagram](https://www.linkedin.com/company/medusajs)
