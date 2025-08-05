@@ -6,23 +6,27 @@
             </NuxtLink>
             <p class="text-center -mt-3">An indie book marketplace, <span class="text-primary/99">coming soon.</span></p>
         </div>
-        <h1 class="uppercase font-black text-muted text-center my-2">For Everyone</h1>
-        <div v-for="feature in readers" class="w-2/5 self-center gap-2">
-            <Feature :feature="feature" />
+        <div class="w-2/5 self-center">
+            <h1 class="uppercase font-black text-muted text-center my-2">For Everyone</h1>
+            <div v-for="feature in readers" class="gap-2">
+                <Feature :feature="feature" />
+            </div>
         </div>
         <USeparator />
         <h1 class="uppercase font-black text-muted text-center my-2">For Authors</h1>
-        <div v-for="feature in authors" class="w-2/5 self-center gap-2">
+        <div v-for="feature in authors" class="w-2/5 self-center gap-2 rounded-md">
             <Feature :feature="feature" />
         </div>
+
+        <!-- <UStepper :items="items" class="w-2/5 self-center mt-5" /> -->
         <!-- Title
         Subtitle
         Newsletter
         Feature List-->
     </div>
 </template>
-<script setup>
-import { provide, ref } from 'vue';
+<script setup lang="ts">
+import type { StepperItem } from '@nuxt/ui'
 
 const authors = [
     {
@@ -69,6 +73,24 @@ const readers = [
         description: "Buy multiple books at once, even from different authors."
     },
 ]
+
+const items = ref<StepperItem[]>([
+  {
+    title: 'Address',
+    description: 'Add your address here',
+    icon: 'i-lucide-house'
+  },
+  {
+    title: 'Shipping',
+    description: 'Set your preferred shipping method',
+    icon: 'i-lucide-truck'
+  },
+  {
+    title: 'Checkout',
+    description: 'Confirm your order'
+  }
+])
+
 
 definePageMeta({
     layout: 'blank'

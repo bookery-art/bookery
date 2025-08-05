@@ -1,7 +1,9 @@
 <template lang="">
     <div class="bg-base-200">
         <Navbar />
-        <slot />
+        <div class="fixed">
+            <slot />
+        </div>
     </div>
 </template>
 <script>
