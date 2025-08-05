@@ -1,29 +1,30 @@
 <template lang="">
     <div>
         <div class="navbar bg-base-100 z-100 relative min-h-[65px] shadow-sm px-[20px]">
-            <div class="flex-1 navbar-start max-w-fit">
+          <UDrawer direction="left" :handle="false" class="navbar-start md:hidden w-full" fixed should-scale-background set-background-color-on-scale>
+              <UButton icon="material-symbols:menu-rounded" color="neutral" variant="link" />
+              <template #body>
+                <UNavigationMenu trailing-icon=""  orientation="vertical" :items="nav_items" class="w-full justify-center gap-2" variant="link">>
+                </UNavigationMenu>
+              </template>
+              <template #footer>
+                <UButton label="Submit" color="neutral" class="justify-center" />
+                <UButton
+                  label="Cancel"
+                  color="neutral"
+                  variant="outline"
+                  class="justify-center"
+                  @click="open = false"
+                />
+              </template>
+            </UDrawer>
+            <div class="flex-1 md:navbar-start navbar-center self-center max-w-fit">
                 <NuxtLink class="text-xl bookery typing" to="/">
                     Bookery
                 </NuxtLink>
             </div>
+            
             <div class="flex-1 navbar-center gap-4 justify-center hidden md:flex grow">
-                <!-- <a href="/b/book" class="navbar-link self-center">Books</a>
-                <a href="" class="navbar-link self-center">Bundles</a>
-                <a href="" class="navbar-link self-center">Authors</a>
-                <a href="" class="navbar-link self-center">Shelves</a>
-                <UDropdownMenu
-                    :items="items"
-                    :content="{
-                    align: 'start',
-                    side: 'bottom',
-                    sideOffset: 8
-                    }"
-                    :ui="{
-                    content: 'w-48'
-                    }"
-                >
-                    <a href="" class="navbar-link self-center">Resources</a>
-                </UDropdownMenu> -->
                 <UNavigationMenu trailing-icon="" :items="nav_items" class="w-full justify-center gap-2" variant="link">>
                 </UNavigationMenu>    
             </div>  
@@ -90,11 +91,11 @@ const nav_items = ref<NavigationMenuItem[]>([
   },
   {
     label: 'Authors',
-    to: '/composables',
+    to: '/',
   },
   {
     label: 'Shelves',
-    to: '/composables',
+    to: '/',
   },
   {
     label: 'Bundles',
@@ -104,53 +105,53 @@ const nav_items = ref<NavigationMenuItem[]>([
         {
         label: 'Latest Bundles',
         description: 'Use NuxtLink with superpowers.',
-        to: '/components/link'
+        to: '/'
       },
       {
         label: 'Trending Bundles',
         description: 'Display a modal within your application.',
-        to: '/components/modal'
+        to: '/'
       },
       {
         label: 'Best Deal Bundles',
         description: 'Display a list of links.',
-        to: '/components/navigation-menu'
+        to: '/'
       },
     ]
   },
   {
     label: 'Resources',
-    to: '/components',
+    to: '/',
     children: [
       {
         label: 'Editing',
         description: 'Use NuxtLink with superpowers.',
-        to: '/components/link'
+        to: '/'
       },
       {
         label: 'Covers',
         description: 'Display a modal within your application.',
-        to: '/components/modal'
+        to: '/'
       },
       {
         label: 'Formatting',
         description: 'Display a list of links.',
-        to: '/components/navigation-menu'
+        to: ''
       },
       {
         label: 'Guides',
         description: 'Display a list of pages.',
-        to: '/components/pagination'
+        to: '/'
       },
       {
         label: 'FAQ',
         description: 'Display a non-modal dialog that floats around a trigger element.',
-        to: '/components/popover'
+        to: '/'
       },
       {
         label: 'Help & Support',
         description: 'Show a horizontal bar to indicate task progression.',
-        to: '/components/progress'
+        to: '/'
       }
     ]
   }

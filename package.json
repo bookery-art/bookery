@@ -10,6 +10,8 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@medusajs/js-sdk": "^2.8.8",
+    "@medusajs/types": "^2.8.8",
     "@nuxt/fonts": "^0.11.4",
     "@nuxt/icon": "^1.15.0",
     "@nuxt/image": "^1.10.0",
