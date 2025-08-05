@@ -1,7 +1,8 @@
 <template lang="">
     <div>
         <div class="navbar bg-base-100 z-100 relative min-h-[65px] shadow-sm px-[20px]">
-          <UDrawer direction="left" :handle="false" class="navbar-start md:hidden w-full" fixed should-scale-background set-background-color-on-scale>
+          <div class="md:hidden">
+            <UDrawer direction="left" :handle="false" class="navbar-start md:hidden" fixed should-scale-background set-background-color-on-scale>
               <UButton icon="material-symbols:menu-rounded" color="neutral" variant="link" />
               <template #body>
                 <UNavigationMenu trailing-icon=""  orientation="vertical" :items="nav_items" class="w-full justify-center gap-2" variant="link">>
@@ -18,7 +19,8 @@
                 />
               </template>
             </UDrawer>
-            <div class="flex-1 md:navbar-start navbar-center self-center max-w-fit">
+          </div>
+            <div class="flex-1 md:navbar-start navbar-center self-center md:max-w-fit w-full justify-center grow">
                 <NuxtLink class="text-xl bookery typing" to="/">
                     Bookery
                 </NuxtLink>
@@ -41,26 +43,13 @@
                 </div>
                 </button>
                 </div>
+                <div class="md:flex hidden">
                     <UButton class="navbar-login text-primary justify-center" variant="outline">Log In</UButton>
                     <UButton class="navbar-signup text-white justify-center" variant="soft">Sign Up</UButton>
-                <!-- <div class="dropdown dropdown-end">
-                <div tabindex="0" role="button" class="btn btn-ghost btn-circle avatar">
-                    <div class="w-12 rounded-full bg-primary">
-                    </div>
                 </div>
-                <ul
-                    tabindex="0"
-                    class="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
-                    <li>
-                    <a class="justify-between" href="/dashboard">
-                        Profile
-                        <span class="badge">New</span>
-                    </a>
-                    </li>
-                    <li><a>Settings</a></li>
-                    <li><a>Logout</a></li>
-                </ul>
-                </div> -->
+                <div class="md:hidden ">
+                    <UButton class="text-white justify-center" variant="ghost" icon="ion:enter-outline" size="xl"></UButton>
+                </div>
             </div>
         </div>
     </div>

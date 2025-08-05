@@ -13,7 +13,8 @@ export default defineNuxtConfig({
     "@nuxt/fonts",
     '@nuxt/image',
     '@nuxt/icon',
-    '@nuxt/ui'
+    '@nuxt/ui',
+    '@nuxthub/core',
   ],
   fonts: {
     families: [
@@ -28,5 +29,8 @@ export default defineNuxtConfig({
     vuetifyOptions: {
       /* vuetify options */
     }
+  },
+  hub: {
+    database: true
   },
 })
