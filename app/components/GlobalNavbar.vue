@@ -5,7 +5,7 @@
             <UDrawer direction="left" :handle="false" class="navbar-start md:hidden" fixed should-scale-background set-background-color-on-scale>
               <UButton icon="material-symbols:menu-rounded" color="neutral" variant="link" />
               <template #body>
-                <UNavigationMenu trailing-icon=""  orientation="vertical" :items="nav_items" class="w-full justify-center gap-2" variant="link">>
+                <UNavigationMenu trailing-icon=""  orientation="vertical" :items="items" class="w-full justify-center" variant="link">>
                 </UNavigationMenu>
               </template>
               <template #footer>
@@ -27,7 +27,24 @@
             </div>
             
             <div class="flex-1 navbar-center gap-4 justify-center hidden md:flex grow">
-                <UNavigationMenu trailing-icon="" :items="nav_items" class="w-full justify-center" variant="link">>
+                <UNavigationMenu trailing-icon="" :items="items" class="w-full justify-center" variant="link" >
+                  <template #bundles-content="{ item }">
+                    <ul class="grid gap-2 p-2 lg:max-w-fit lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)] justify-end">
+                      <li class="row-span-3 w-full">
+                        <div class="size-full min-h-48 bg-primary grow" />
+                      </li>
+                      <li v-for="child in item.children" :key="child.label">
+                        <ULink class="w-full text-sm text-left rounded-md p-3 transition-colors hover:bg-elevated/50">
+                          <p class="font-medium text-highlighted">
+                            {{ child.label }}
+                          </p>
+                          <p class="text-muted line-clamp-2">
+                            {{ child.description }}
+                          </p>
+                        </ULink>
+                      </li>
+                    </ul>
+                  </template>
                 </UNavigationMenu>    
             </div>  
             <div class="flex gap-4">
@@ -44,11 +61,11 @@
                 </button>
                 </div>
                 <div class="md:flex hidden gap-2">
-                    <UButton class="text-primary justify-center" variant="outline">Log In</UButton>
-                    <UButton class="justify-center" variant="soft">Sign Up</UButton>
+                    <UButton class="text-primary justify-center" variant="outline" to="/login">Log In</UButton>
+                    <UButton class="justify-center" variant="soft" to="/signup">Sign Up</UButton>
                 </div>
                 <div class="md:hidden ">
-                    <UButton class="text-white justify-center" variant="ghost" icon="ion:enter-outline" size="xl"></UButton>
+                    <UButton class="text-white justify-center" variant="ghost" icon="ion:enter-outline" size="xl" to="/login" />
                 </div>
             </div>
         </div>
@@ -59,7 +76,7 @@
 import type { NavigationMenuItem } from '@nuxt/ui'
 
 
-const nav_items = ref<NavigationMenuItem[]>([
+const items = ref<NavigationMenuItem[]>([
   {
     label: 'Books',
     to: '/b/book',

@@ -1,6 +1,6 @@
 <template lang="">
-    <div class="overflow-y-auto">
-        <slot />
+    <div>
+        
     </div>
 </template>
 <script>

@@ -1,5 +1,11 @@
 export default defineAppConfig({
     ui: {
+        accordion: {
+            slots: {
+                root: 'w-full',
+                item: 'border border-default rounded-sm my-2 last:border-b px-2',
+            }
+        },
         drawer: {
             slots: {
                 overlay: 'fixed inset-0 bg-elevated/75',
@@ -124,7 +130,7 @@ export default defineAppConfig({
                 childList: 'isolate',
                 childLabel: 'text-xs text-highlighted',
                 childItem: '',
-                childLink: 'group relative size-full flex items-start text-start text-sm before:absolute before:z-[-1] before:rounded-sm focus:outline-none focus-visible:outline-none dark:focus-visible:outline-none focus-visible:before:ring-inset focus-visible:before:ring-2',
+                childLink: 'group relative size-full flex items-start text-start text-sm before:absolute before:z-[-1] before:rounded-sm focus:outline-none focus-visible:outline-none dark:focus-visible:outline-none focus-visible:before:ring-inset focus-visible:before:ring-2 text-sm text-left rounded-md p-3 transition-colors hover:bg-elevated/50',
                 childLinkWrapper: 'min-w-0',
                 childLinkIcon: 'size-5 shrink-0',
                 childLinkLabel: 'truncate',

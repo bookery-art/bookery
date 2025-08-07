@@ -1,6 +1,6 @@
 <template lang="">
-    <div>
-        
+    <div class="h-full w-full bg-base-200">
+        hi
     </div>
 </template>
 <script>
