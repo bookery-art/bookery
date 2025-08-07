@@ -1,6 +1,6 @@
 <template lang="">
     <div class="bg-base-200">
-        <Navbar />
+        <GlobalNavbar />
         <div class="fixed">
             <slot />
         </div>

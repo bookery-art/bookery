@@ -1,6 +1,9 @@
 <template lang="">
-    <div>
-        
+    <div class="bg-base-200">
+        <GlobalNavbar />
+        <div class="fixed">
+            <slot />
+        </div>
     </div>
 </template>
 <script>

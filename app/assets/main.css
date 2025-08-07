@@ -265,7 +265,6 @@ html {
 
 .navbar-login {
     border-color: var(--color-primary);
-    border-width: 3px;
     padding: 5px;
     width: 70px;
     color: var(--color-primary);
@@ -333,14 +332,14 @@ html {
 }
 
 @keyframes fadeInUp {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0%);
-    opacity: 1;
-  }
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0%);
+        opacity: 1;
+    }
 }
 
 .fadeInUp-animation {

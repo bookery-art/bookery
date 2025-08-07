@@ -27,7 +27,7 @@
             </div>
             
             <div class="flex-1 navbar-center gap-4 justify-center hidden md:flex grow">
-                <UNavigationMenu trailing-icon="" :items="nav_items" class="w-full justify-center gap-2" variant="link">>
+                <UNavigationMenu trailing-icon="" :items="nav_items" class="w-full justify-center" variant="link">>
                 </UNavigationMenu>    
             </div>  
             <div class="flex gap-4">
@@ -43,9 +43,9 @@
                 </div>
                 </button>
                 </div>
-                <div class="md:flex hidden">
-                    <UButton class="navbar-login text-primary justify-center" variant="outline">Log In</UButton>
-                    <UButton class="navbar-signup text-white justify-center" variant="soft">Sign Up</UButton>
+                <div class="md:flex hidden gap-2">
+                    <UButton class="text-primary justify-center" variant="outline">Log In</UButton>
+                    <UButton class="justify-center" variant="soft">Sign Up</UButton>
                 </div>
                 <div class="md:hidden ">
                     <UButton class="text-white justify-center" variant="ghost" icon="ion:enter-outline" size="xl"></UButton>
@@ -56,22 +56,8 @@
 </template>
 
 <script setup lang="ts">
-import type { DropdownMenuItem } from '@nuxt/ui'
-
-const items = ref<DropdownMenuItem[]>([
-    {
-        label: 'Profile',
-    },
-    {
-        label: 'Billing',
-    },
-    {
-        label: 'Settings',
-        icon: 'i-lucide-cog'
-    }
-])
-
 import type { NavigationMenuItem } from '@nuxt/ui'
+
 
 const nav_items = ref<NavigationMenuItem[]>([
   {
@@ -125,7 +111,7 @@ const nav_items = ref<NavigationMenuItem[]>([
       {
         label: 'Formatting',
         description: 'Display a list of links.',
-        to: ''
+        to: '/'
       },
       {
         label: 'Guides',

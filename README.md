@@ -14,7 +14,7 @@ Frontend of Bookery, an indie book marketplace.
 
 ## Tech Stack
 
-Bookery is build using Nuxt.js v4, a Vue framework.
+Bookery is build using Nuxt.js v4, a Vue framework. Authentication with better-auth, database with NuxtHub (Cloudflare D1) and Drizzle ORM.
 
 
 ## Setup

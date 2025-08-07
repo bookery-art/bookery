@@ -1,6 +1,6 @@
 <template lang="">
     <div>
-        <Navbar />
+        <GlobalNavbar />
         <IndexSidebar />
         <div class="top-[65px] left-[260px] fixed w-full h-full overflow-y-auto content-max-dimensions">
             <slot />

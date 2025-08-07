@@ -9,26 +9,21 @@ export default defineNuxtConfig({
   },
   css: ["~/assets/main.css"],
   modules: [
-    'vuetify-nuxt-module',
     "@nuxt/fonts",
     '@nuxt/image',
     '@nuxt/icon',
     '@nuxt/ui',
     '@nuxthub/core',
+    '@nuxt/eslint',
+    '@nuxtjs/seo',
+    '@vueuse/nuxt',
+    'nuxt-nodemailer',
   ],
   fonts: {
     families: [
       { name : 'Bookery', src: '/PWSerifScratch.ttf' },
       { name: 'Noto Sans', provider: 'google'},
     ],
-  },
-  vuetify: {
-    moduleOptions: {
-      /* module specific options */
-    },
-    vuetifyOptions: {
-      /* vuetify options */
-    }
   },
   hub: {
     database: true
@@ -37,5 +32,15 @@ export default defineNuxtConfig({
     experimental: {
       openAPI: true
     }
-  }
+  },
+  nodemailer: {
+    from: '"Bookery" <notifcations@bookery.art>',
+    host: 'smtp.zoho.eu',
+    port: 465,
+    secure: true,
+    auth: {
+      user: 'notifications@bookery.art',
+      pass: '',
+    },
+  },
 })
